@@ -1,0 +1,10 @@
+:root {
+  --main-color: #f40000;
+  --font-size: 16px;
+}
+@custom-selector :--button button, .button;
+
+:--button {
+  background: var(--main-color, blue);
+  font-size: calc(var(--font-size) * 5)
+}
