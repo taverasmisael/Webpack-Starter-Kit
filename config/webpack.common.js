@@ -15,7 +15,6 @@ module.exports = {
       path.resolve(CONFIG.SOURCE_FOLDER, './js/index.js')
     ]
   },
-  devtool: 'source-map',
   output: {
     path: CONFIG.DIST_FOLDER,
     filename: '[name].[hash].js'
