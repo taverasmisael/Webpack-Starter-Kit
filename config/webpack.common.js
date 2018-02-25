@@ -1,9 +1,11 @@
 const path = require('path')
 const webpack = require('webpack')
 
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const CompressionPlugin = require('compression-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const StyleLintPlugin = require('stylelint-webpack-plugin')
 
 const CONFIG = require('./config')
 
@@ -14,7 +16,7 @@ module.exports = {
   },
   output: {
     path: CONFIG.DIST_FOLDER,
-    filename: '[name].[hash].js'
+    filename: '[name].[hash:8].js'
   },
   devServer: {
     contentBase: CONFIG.SOURCE_FOLDER,
@@ -24,9 +26,11 @@ module.exports = {
   plugins: [
     new CompressionPlugin({ algorithm: 'gzip', regExp: /\.(js|html|css)$/, minRatio: 0 }),
     new ExtractTextPlugin({
-      filename: '[name].[hash].css',
+      filename: '[name].[hash:8].css',
       allChunks: true
     }),
+    new FaviconsWebpackPlugin(path.resolve(CONFIG.SOURCE_FOLDER, 'favicon.png')),
+    new StyleLintPlugin(),
     new HtmlWebpackPlugin({
       inject: true,
       template: path.resolve(__dirname, '../src/index.html'),
@@ -47,12 +51,23 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(png|jpg|gif|eot|ttf|woff|woff2|otf|svg)$/,
+        test: /\.(png|jpg|gif|svg)$/,
         use: [
           {
             loader: 'file-loader',
             options: {
-              name: 'assets/[name]-[hash].[ext]'
+              name: 'assets/[name]-[hash:8].[ext]'
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(eot|ttf|woff|woff2|otf)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'assets/fonts/[name]-[hash:8].[ext]'
             }
           }
         ]
@@ -82,7 +97,7 @@ module.exports = {
             use: [
               {
                 loader: 'css-loader',
-                options: { importLoaders: 1, minimize: true, module: true }
+                options: { importLoaders: 2, minimize: true, module: true }
               },
               { loader: 'sass-loader', options: { sourceMap: true } },
               { loader: 'postcss-loader', options: { sourceMap: true } }

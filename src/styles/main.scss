@@ -1,10 +1,13 @@
 @import '~minireset.css/minireset.sass';
+
 :root {
   --main-color: #f40000;
   --font-size: 16px;
 }
 
 body {
+  font-family: Helvetica, sans-serif;
+
   & > * {
     background: var(--main-color, blue);
     font-size: calc(var(--font-size) * 5);
