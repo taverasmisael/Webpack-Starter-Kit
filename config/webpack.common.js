@@ -18,10 +18,10 @@ module.exports = {
   },
   devServer: {
     contentBase: CONFIG.SOURCE_FOLDER,
-    compress: true
+    compress: true,
+    hot: false
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     new CompressionPlugin({ algorithm: 'gzip', regExp: /\.(js|html|css)$/, minRatio: 0 }),
     new ExtractTextPlugin({
       filename: '[name].[hash].css',
@@ -76,16 +76,19 @@ module.exports = {
       {
         test: /\.(scss|sass)$/,
         exclude: /node_modules/,
-        use: ExtractTextPlugin.extract({
-          use: [
-            {
-              loader: 'css-loader',
-              options: { importLoaders: 1, minimize: true, modules: true }
-            },
-            { loader: 'postcss-loader', options: { sourceMap: true } },
-            { loader: 'sass-loader', options: { sourceMap: true } }
-          ]
-        })
+        use: ['css-hot-loader'].concat(
+          ExtractTextPlugin.extract({
+            fallback: 'style-loader',
+            use: [
+              {
+                loader: 'css-loader',
+                options: { importLoaders: 1, minimize: true, module: true }
+              },
+              { loader: 'sass-loader', options: { sourceMap: true } },
+              { loader: 'postcss-loader', options: { sourceMap: true } }
+            ]
+          })
+        )
       }
     ]
   }
