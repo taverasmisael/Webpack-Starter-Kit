@@ -5,7 +5,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const UnCSSPlugin = require('uncss-webpack-plugin')
 const ImageminPlugin = require('imagemin-webpack-plugin').default
 const CleanWebpackPlugin = require('clean-webpack-plugin')
-const ZipPlugin = require('zip-webpack-plugin');
+const ZipPlugin = require('zip-webpack-plugin')
 
 const CONFIG = require('./config')
 

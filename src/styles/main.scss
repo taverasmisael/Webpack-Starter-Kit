@@ -1,0 +1,12 @@
+@import '~minireset.css/minireset.sass';
+:root {
+  --main-color: #f40000;
+  --font-size: 16px;
+}
+
+body {
+  & > * {
+    background: var(--main-color, blue);
+    font-size: calc(var(--font-size) * 5);
+  }
+}

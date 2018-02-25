@@ -1,15 +1,13 @@
 const merge = require('webpack-merge')
 const common = require('./webpack.common')
 
-const DashboardPlugin = require('webpack-dashboard/plugin')
+const Jarvis = require('webpack-jarvis')
 
 module.exports = merge(common, {
   devtool: 'eval-source-map',
   stats: {
     colors: true,
-    reasons: true
+    reasons: true,
   },
-  plugins: [
-    new DashboardPlugin()
-  ]
+  plugins: [new Jarvis()],
 })

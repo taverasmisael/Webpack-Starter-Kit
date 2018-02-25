@@ -10,10 +10,7 @@ const CONFIG = require('./config')
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
-    app: [
-      path.resolve(CONFIG.SOURCE_FOLDER, './styles/main.pcss'),
-      path.resolve(CONFIG.SOURCE_FOLDER, './js/index.js')
-    ]
+    app: [path.resolve(CONFIG.SOURCE_FOLDER, './styles/main.scss'), path.resolve(CONFIG.SOURCE_FOLDER, './js/index.js')]
   },
   output: {
     path: CONFIG.DIST_FOLDER,
@@ -77,15 +74,16 @@ module.exports = {
         })
       },
       {
-        test: /\.(css|pcss)$/,
+        test: /\.(scss|sass)$/,
         exclude: /node_modules/,
         use: ExtractTextPlugin.extract({
           use: [
             {
               loader: 'css-loader',
-              options: { importLoaders: 1, minimize: true }
+              options: { importLoaders: 1, minimize: true, modules: true }
             },
-            { loader: 'postcss-loader' }
+            { loader: 'postcss-loader', options: { sourceMap: true } },
+            { loader: 'sass-loader', options: { sourceMap: true } }
           ]
         })
       }
