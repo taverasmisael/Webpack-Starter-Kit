@@ -16,7 +16,8 @@ module.exports = {
   },
   output: {
     path: CONFIG.DIST_FOLDER,
-    filename: '[name].[hash:8].js'
+    filename: '[name].[hash:8].js',
+    chunkFilename: '[name].[chunkhash:8].js'
   },
   devServer: {
     contentBase: CONFIG.SOURCE_FOLDER,

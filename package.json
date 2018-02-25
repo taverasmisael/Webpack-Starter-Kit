@@ -4,12 +4,13 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
+    "@babel/core": "^7.0.0-beta.40",
+    "@babel/plugin-transform-runtime": "^7.0.0-beta.40",
+    "@babel/preset-env": "^7.0.0-beta.40",
+    "@babel/preset-stage-1": "^7.0.0-beta.40",
     "autoprefixer": "^8.0.0",
-    "babel-core": "^6.25.0",
-    "babel-eslint": "^7.2.3",
-    "babel-loader": "^7.1.1",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-stage-1": "^6.24.1",
+    "babel-eslint": "^8.2.2",
+    "babel-loader": "8.0.0-beta.0",
     "caniuse-lite": "^1.0.30000810",
     "clean-webpack-plugin": "^0.1.17",
     "compression-webpack-plugin": "^1.0.0",
@@ -50,6 +51,7 @@
     "build": "cross-env NODE_ENV=production webpack -p"
   },
   "dependencies": {
+    "@babel/runtime": "^7.0.0-beta.40",
     "minireset.css": "^0.0.3"
   },
   "ProjectConfig": {
