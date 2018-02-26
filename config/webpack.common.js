@@ -6,6 +6,7 @@ const CompressionPlugin = require('compression-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const StyleLintPlugin = require('stylelint-webpack-plugin')
+const FlowWebpackPlugin = require('flow-webpack-plugin')
 
 const CONFIG = require('./config')
 
@@ -25,6 +26,7 @@ module.exports = {
     hot: false
   },
   plugins: [
+    new FlowWebpackPlugin(),
     new CompressionPlugin({ algorithm: 'gzip', regExp: /\.(js|html|css)$/, minRatio: 0 }),
     new ExtractTextPlugin({
       filename: '[name].[hash:8].css',
@@ -76,7 +78,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: [/node_modules/],
-        use: [{ loader: 'babel-loader' }]
+        use: ['babel-loader', 'eslint-loader']
       },
       {
         test: /\.css$/,
