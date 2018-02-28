@@ -35,7 +35,7 @@ module.exports = {
     new StyleLintPlugin(),
     new HtmlWebpackPlugin({
       inject: true,
-      template: resolve(__dirname, '../src/index.html'),
+      template: resolve(SOURCE_FOLDER, 'index.html'),
       minify: {
         removeComments: true,
         collapseWhitespace: true,
