@@ -1,15 +1,13 @@
-const merge = require('webpack-merge')
-const common = require('./webpack.common')
-
-const DashboardPlugin = require('webpack-dashboard/plugin')
+/* eslint import/no-extraneous-dependencies: 0 */
+import merge from 'webpack-merge'
+import Jarvis from 'webpack-jarvis'
+import common from './webpack.common'
 
 module.exports = merge(common, {
-  devtool: 'eval-source-map',
+  devtool: 'source-map',
   stats: {
     colors: true,
     reasons: true
   },
-  plugins: [
-    new DashboardPlugin()
-  ]
+  plugins: [new Jarvis()]
 })

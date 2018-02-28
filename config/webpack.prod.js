@@ -1,13 +1,14 @@
-const webpack = require('webpack')
-const merge = require('webpack-merge')
-const common = require('./webpack.common')
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
-const UnCSSPlugin = require('uncss-webpack-plugin')
-const ImageminPlugin = require('imagemin-webpack-plugin').default
-const CleanWebpackPlugin = require('clean-webpack-plugin')
-const ZipPlugin = require('zip-webpack-plugin');
+/* eslint import/no-extraneous-dependencies: 0 */
+import webpack from 'webpack'
+import merge from 'webpack-merge'
+import UglifyJSPlugin from 'uglifyjs-webpack-plugin'
+import UnCSSPlugin from 'uncss-webpack-plugin'
+import ImageminPlugin from 'imagemin-webpack-plugin'
+import CleanWebpackPlugin from 'clean-webpack-plugin'
+import ZipPlugin from 'zip-webpack-plugin'
 
-const CONFIG = require('./config')
+import common from './webpack.common'
+import { DIST_FOLDER, BASE_FOLDER, APP_NAME } from './config'
 
 module.exports = merge(common, {
   devtool: false,
@@ -21,9 +22,9 @@ module.exports = merge(common, {
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.optimize.ModuleConcatenationPlugin(),
     new ImageminPlugin(),
-    new CleanWebpackPlugin([CONFIG.DIST_FOLDER], { root: CONFIG.BASE_FOLDER }),
+    new CleanWebpackPlugin([DIST_FOLDER], { root: BASE_FOLDER }),
     new ZipPlugin({
-      filename: CONFIG.APP_NAME
+      filename: APP_NAME
     })
   ]
 })

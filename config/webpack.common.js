@@ -1,38 +1,41 @@
-const path = require('path')
-const webpack = require('webpack')
+/* eslint import/no-extraneous-dependencies: 0 */
+import { resolve } from 'path'
+import FaviconsWebpackPlugin from 'favicons-webpack-plugin'
+import CompressionPlugin from 'compression-webpack-plugin'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
+import ExtractTextPlugin from 'extract-text-webpack-plugin'
+import StyleLintPlugin from 'stylelint-webpack-plugin'
+import FlowWebpackPlugin from 'flow-webpack-plugin'
 
-const CompressionPlugin = require('compression-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
-
-const CONFIG = require('./config')
+import { SOURCE_FOLDER, DIST_FOLDER } from './config'
 
 module.exports = {
-  context: path.resolve(__dirname, '../'),
+  context: resolve(__dirname, '../'),
   entry: {
-    app: [
-      path.resolve(CONFIG.SOURCE_FOLDER, './styles/main.pcss'),
-      path.resolve(CONFIG.SOURCE_FOLDER, './js/index.js')
-    ]
+    app: [resolve(SOURCE_FOLDER, './styles/main.scss'), resolve(SOURCE_FOLDER, './js/index.js')]
   },
   output: {
-    path: CONFIG.DIST_FOLDER,
-    filename: '[name].[hash].js'
+    path: DIST_FOLDER,
+    filename: '[name].[hash:8].js',
+    chunkFilename: '[name].[chunkhash:8].js'
   },
   devServer: {
-    contentBase: CONFIG.SOURCE_FOLDER,
-    compress: true
+    contentBase: SOURCE_FOLDER,
+    compress: true,
+    hot: false
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
+    new FlowWebpackPlugin(),
     new CompressionPlugin({ algorithm: 'gzip', regExp: /\.(js|html|css)$/, minRatio: 0 }),
     new ExtractTextPlugin({
-      filename: '[name].[hash].css',
+      filename: '[name].[hash:8].css',
       allChunks: true
     }),
+    new FaviconsWebpackPlugin(resolve(SOURCE_FOLDER, 'favicon.png')),
+    new StyleLintPlugin(),
     new HtmlWebpackPlugin({
       inject: true,
-      template: path.resolve(__dirname, '../src/index.html'),
+      template: resolve(SOURCE_FOLDER, 'index.html'),
       minify: {
         removeComments: true,
         collapseWhitespace: true,
@@ -50,12 +53,23 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(png|jpg|gif|eot|ttf|woff|woff2|otf|svg)$/,
+        test: /\.(png|jpg|gif|svg)$/,
         use: [
           {
             loader: 'file-loader',
             options: {
-              name: 'assets/[name]-[hash].[ext]'
+              name: 'assets/[name]-[hash:8].[ext]'
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(eot|ttf|woff|woff2|otf)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'assets/fonts/[name]-[hash:8].[ext]'
             }
           }
         ]
@@ -63,7 +77,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: [/node_modules/],
-        use: [{ loader: 'babel-loader' }]
+        use: ['babel-loader', 'eslint-loader']
       },
       {
         test: /\.css$/,
@@ -77,17 +91,21 @@ module.exports = {
         })
       },
       {
-        test: /\.(css|pcss)$/,
+        test: /\.(scss|sass)$/,
         exclude: /node_modules/,
-        use: ExtractTextPlugin.extract({
-          use: [
-            {
-              loader: 'css-loader',
-              options: { importLoaders: 1, minimize: true }
-            },
-            { loader: 'postcss-loader' }
-          ]
-        })
+        use: ['css-hot-loader'].concat(
+          ExtractTextPlugin.extract({
+            fallback: 'style-loader',
+            use: [
+              {
+                loader: 'css-loader',
+                options: { importLoaders: 2, minimize: true, module: true }
+              },
+              { loader: 'sass-loader', options: { sourceMap: true } },
+              { loader: 'postcss-loader', options: { sourceMap: true } }
+            ]
+          })
+        )
       }
     ]
   }
