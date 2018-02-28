@@ -1,13 +1,11 @@
 // @flow
-class User {
-  name = 'sta'
+export default class User {
+  name = 'The'
   constructor() {
-    this.name = `${this.name} woman`
+    this.name = `${this.name} Release`
   }
 
-  static weird(): number {
-    return 2
+  static method(): number {
+    return 1
   }
 }
-
-export default new User()
