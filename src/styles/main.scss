@@ -8,8 +8,8 @@
 body {
   font-family: Helvetica, sans-serif;
 
-  & > * {
-    background: var(--main-color, blue);
+  * {
+    background: var(--main-color, #00f);
     font-size: calc(var(--font-size) * 5);
   }
 }
