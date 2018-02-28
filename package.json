@@ -1,6 +1,6 @@
 {
   "name": "app_name",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
@@ -39,6 +39,7 @@
     "postcss-flexbugs-fixes": "^3.2.0",
     "postcss-loader": "^2.0.6",
     "sass-loader": "^6.0.6",
+    "standard-version": "^4.3.0",
     "style-loader": "^0.20.2",
     "stylelint": "^9.1.1",
     "stylelint-config-sass-guidelines": "^5.0.0",
@@ -55,7 +56,8 @@
   },
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "cross-env NODE_ENV=production webpack -p"
+    "build": "cross-env NODE_ENV=production webpack -p",
+    "release": "yarn standard-version"
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0-beta.40",
