@@ -1,27 +1,26 @@
-const path = require('path')
-const webpack = require('webpack')
+/* eslint import/no-extraneous-dependencies: 0 */
+import { resolve } from 'path'
+import FaviconsWebpackPlugin from 'favicons-webpack-plugin'
+import CompressionPlugin from 'compression-webpack-plugin'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
+import ExtractTextPlugin from 'extract-text-webpack-plugin'
+import StyleLintPlugin from 'stylelint-webpack-plugin'
+import FlowWebpackPlugin from 'flow-webpack-plugin'
 
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
-const CompressionPlugin = require('compression-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const StyleLintPlugin = require('stylelint-webpack-plugin')
-const FlowWebpackPlugin = require('flow-webpack-plugin')
-
-const CONFIG = require('./config')
+import { SOURCE_FOLDER, DIST_FOLDER } from './config'
 
 module.exports = {
-  context: path.resolve(__dirname, '../'),
+  context: resolve(__dirname, '../'),
   entry: {
-    app: [path.resolve(CONFIG.SOURCE_FOLDER, './styles/main.scss'), path.resolve(CONFIG.SOURCE_FOLDER, './js/index.js')]
+    app: [resolve(SOURCE_FOLDER, './styles/main.scss'), resolve(SOURCE_FOLDER, './js/index.js')]
   },
   output: {
-    path: CONFIG.DIST_FOLDER,
+    path: DIST_FOLDER,
     filename: '[name].[hash:8].js',
     chunkFilename: '[name].[chunkhash:8].js'
   },
   devServer: {
-    contentBase: CONFIG.SOURCE_FOLDER,
+    contentBase: SOURCE_FOLDER,
     compress: true,
     hot: false
   },
@@ -32,11 +31,11 @@ module.exports = {
       filename: '[name].[hash:8].css',
       allChunks: true
     }),
-    new FaviconsWebpackPlugin(path.resolve(CONFIG.SOURCE_FOLDER, 'favicon.png')),
+    new FaviconsWebpackPlugin(resolve(SOURCE_FOLDER, 'favicon.png')),
     new StyleLintPlugin(),
     new HtmlWebpackPlugin({
       inject: true,
-      template: path.resolve(__dirname, '../src/index.html'),
+      template: resolve(__dirname, '../src/index.html'),
       minify: {
         removeComments: true,
         collapseWhitespace: true,
