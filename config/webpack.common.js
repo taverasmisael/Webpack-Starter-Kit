@@ -19,12 +19,6 @@ module.exports = {
     filename: '[name].[hash:8].js',
     chunkFilename: '[name].[chunkhash:8].js'
   },
-  devServer: {
-    contentBase: SOURCE_FOLDER,
-    compress: true,
-    hot: false,
-    port: PORT
-  },
   plugins: [
     new FlowWebpackPlugin(),
     new CompressionPlugin({ algorithm: 'gzip', regExp: /\.(js|html|css)$/, minRatio: 0 }),
