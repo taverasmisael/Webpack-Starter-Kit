@@ -7,7 +7,7 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import StyleLintPlugin from 'stylelint-webpack-plugin'
 import FlowWebpackPlugin from 'flow-webpack-plugin'
 
-import { SOURCE_FOLDER, DIST_FOLDER } from './config'
+import { SOURCE_FOLDER, DIST_FOLDER, HTMLCONFIG } from './config'
 
 module.exports = {
   context: resolve(__dirname, '../'),
@@ -33,22 +33,7 @@ module.exports = {
     }),
     new FaviconsWebpackPlugin(resolve(SOURCE_FOLDER, 'favicon.png')),
     new StyleLintPlugin(),
-    new HtmlWebpackPlugin({
-      inject: true,
-      template: resolve(SOURCE_FOLDER, 'index.html'),
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true,
-        removeRedundantAttributes: true,
-        useShortDoctype: true,
-        removeEmptyAttributes: true,
-        removeStyleLinkTypeAttributes: true,
-        keepClosingSlash: true,
-        minifyJS: true,
-        minifyCSS: true,
-        minifyURLs: true
-      }
-    })
+    new HtmlWebpackPlugin(HTMLCONFIG)
   ],
   module: {
     rules: [
@@ -93,19 +78,17 @@ module.exports = {
       {
         test: /\.(scss|sass)$/,
         exclude: /node_modules/,
-        use: ['css-hot-loader'].concat(
-          ExtractTextPlugin.extract({
-            fallback: 'style-loader',
-            use: [
-              {
-                loader: 'css-loader',
-                options: { importLoaders: 2, minimize: true, module: true }
-              },
-              { loader: 'sass-loader', options: { sourceMap: true } },
-              { loader: 'postcss-loader', options: { sourceMap: true } }
-            ]
-          })
-        )
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            {
+              loader: 'css-loader',
+              options: { importLoaders: 2, minimize: true, module: true }
+            },
+            { loader: 'postcss-loader', options: { sourceMap: true } },
+            { loader: 'sass-loader', options: { sourceMap: true } }
+          ]
+        })
       }
     ]
   }
