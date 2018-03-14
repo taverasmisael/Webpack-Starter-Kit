@@ -61,10 +61,5 @@
   "dependencies": {
     "@babel/runtime": "^7.0.0-beta.40",
     "minireset.css": "^0.0.3"
-  },
-  "ProjectConfig": {
-    "source": "./src",
-    "dist": "./dist",
-    "displayName": "App Name"
   }
 }

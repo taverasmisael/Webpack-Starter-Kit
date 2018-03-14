@@ -1,0 +1,6 @@
+{
+  "source": "./src",
+  "dist": "./dist",
+  "displayName": "App Name",
+  "port": "1234"
+}
