@@ -2,7 +2,6 @@
 import webpack from 'webpack'
 import merge from 'webpack-merge'
 import UglifyJSPlugin from 'uglifyjs-webpack-plugin'
-import UnCSSPlugin from 'uncss-webpack-plugin'
 import ImageminPlugin from 'imagemin-webpack-plugin'
 import CleanWebpackPlugin from 'clean-webpack-plugin'
 import ZipPlugin from 'zip-webpack-plugin'
@@ -19,7 +18,6 @@ module.exports = merge(common, {
       output: { comments: false, ascii_only: true },
       sourceMap: false
     }),
-    new UnCSSPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.optimize.ModuleConcatenationPlugin(),
     new ImageminPlugin(),

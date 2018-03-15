@@ -78,7 +78,7 @@ module.exports = {
           use: [
             {
               loader: 'css-loader',
-              options: { importLoaders: 2, minimize: true, module: true }
+              options: { importLoaders: 2, minimize: true, module: false, sourceMap: true }
             },
             { loader: 'postcss-loader', options: { sourceMap: true } },
             { loader: 'sass-loader', options: { sourceMap: true } }

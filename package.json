@@ -46,7 +46,6 @@
     "stylelint-selector-bem-pattern": "^2.0.0",
     "stylelint-webpack-plugin": "^0.10.3",
     "uglifyjs-webpack-plugin": "^0.4.6",
-    "uncss-webpack-plugin": "^0.2.0",
     "webpack": "^3.5.4",
     "webpack-dev-server": "^2.7.1",
     "webpack-jarvis": "^0.3.0",
