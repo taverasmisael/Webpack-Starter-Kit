@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.0.0"></a>
+# [3.0.0](https://github.com/taverasmisael/Webpack-Starter-Kit/compare/v2.0.0...v3.0.0) (2018-03-15)
+
+
+### Bug Fixes
+
+* **autoprefixer:** use autoprefixer. Drop old IE support ([508ea32](https://github.com/taverasmisael/Webpack-Starter-Kit/commit/508ea32))
+
+
+### Features
+
+* **chore:** open browser in dev ([e783e38](https://github.com/taverasmisael/Webpack-Starter-Kit/commit/e783e38))
+* **config:** remove config from package.json ([f7e1fdd](https://github.com/taverasmisael/Webpack-Starter-Kit/commit/f7e1fdd))
+* **css:** remove UnCSS add sourcemaps ([f4b933d](https://github.com/taverasmisael/Webpack-Starter-Kit/commit/f4b933d))
+* **gzip:** add gzip support in prod build ([1d45ded](https://github.com/taverasmisael/Webpack-Starter-Kit/commit/1d45ded))
+* **lock files:** add npm and yarn lock files ([28bf52b](https://github.com/taverasmisael/Webpack-Starter-Kit/commit/28bf52b))
+
+
+### BREAKING CHANGES
+
+* **config:** the project config is on config/project.json
+
+
+
 <a name="2.0.0"></a>
 # 2.0.0 (2018-02-28)
 
