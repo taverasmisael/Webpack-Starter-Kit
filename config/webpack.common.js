@@ -7,7 +7,7 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import StyleLintPlugin from 'stylelint-webpack-plugin'
 import FlowWebpackPlugin from 'flow-webpack-plugin'
 
-import { SOURCE_FOLDER, DIST_FOLDER, HTMLCONFIG, PORT } from './config'
+import { SOURCE_FOLDER, DIST_FOLDER, HTMLCONFIG } from './config'
 
 module.exports = {
   context: resolve(__dirname, '../'),
