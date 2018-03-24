@@ -1,5 +1,6 @@
 /* eslint import/no-extraneous-dependencies: 0 */
-import { resolve } from 'path'
+import { resolve, parse } from 'path'
+import { readdirSync } from 'fs'
 import FaviconsWebpackPlugin from 'favicons-webpack-plugin'
 import CompressionPlugin from 'compression-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
@@ -9,8 +10,29 @@ import FlowWebpackPlugin from 'flow-webpack-plugin'
 
 import { SOURCE_FOLDER, DIST_FOLDER, HTMLCONFIG } from './config'
 
+const context = resolve(__dirname, '../')
+
+const LoadPages = dir =>
+  readdirSync(dir).reduce((prev, file) => {
+    const fileInfo = parse(file)
+    if (fileInfo.ext === '.pug') {
+      return [
+        ...prev,
+        new HtmlWebpackPlugin({
+          ...HTMLCONFIG,
+          template: resolve(dir, file),
+          filename: `${fileInfo.name}.html`
+        })
+      ]
+    }
+    return prev
+  }, [])
+
 module.exports = {
-  context: resolve(__dirname, '../'),
+  context,
+  resolve: {
+    alias: { '@images': resolve(SOURCE_FOLDER, 'images/'), '@projectConfig': resolve(__dirname, './config.js') }
+  },
   entry: {
     app: [resolve(SOURCE_FOLDER, './styles/main.scss'), resolve(SOURCE_FOLDER, './js/index.js')]
   },
@@ -28,10 +50,15 @@ module.exports = {
     }),
     new FaviconsWebpackPlugin(resolve(SOURCE_FOLDER, 'favicon.png')),
     new StyleLintPlugin(),
-    new HtmlWebpackPlugin(HTMLCONFIG)
+    ...LoadPages(resolve(SOURCE_FOLDER, 'views/pages'))
   ],
   module: {
     rules: [
+      {
+        test: /\.pug$/,
+        loader: 'pug-loader',
+        exclude: /node_modules/
+      },
       {
         test: /\.(png|jpg|gif|svg)$/,
         use: [

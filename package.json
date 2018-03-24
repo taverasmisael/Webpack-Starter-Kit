@@ -37,6 +37,8 @@
     "node-sass": "^4.7.2",
     "postcss-flexbugs-fixes": "^3.2.0",
     "postcss-loader": "^2.0.6",
+    "pug": "^2.0.3",
+    "pug-loader": "^2.3.0",
     "sass-loader": "^6.0.6",
     "standard-version": "^4.3.0",
     "style-loader": "^0.20.2",

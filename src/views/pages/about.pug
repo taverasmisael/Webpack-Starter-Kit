@@ -1,0 +1,6 @@
+extends ../layouts/main.pug
+append config
+  - var currentPage = 'about'
+  - var pageTitle = 'About – ' + require('@projectConfig').APP_NAME
+block content
+  h1 Please let me

@@ -1,0 +1,8 @@
+include ../utils/nav.pug
+header.header
+  img.header__logo(src=require("@images/logo.svg"), alt="Company Logo")
+  nav.header__nav
+    ul.nav
+      +navLink('/', 'index', 'Home')
+      +navLink('/about.html', 'about', 'About')
+      +navLink('/contacts.html', 'contacts', 'Contacts')

@@ -1,0 +1,35 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet" viewBox="556 277 140 114"><g data-item-type="text" data-item="Business" id="logo__item--business" class="logo__item">
+  <g class="logo__item__inner" transform="translate(560.1640625 388.6941761029616) scale(1 1) rotate(0 0 0)">
+    <text data-part-id="logo__item--business" dy="0" dominant-baseline="auto" alignment-baseline="auto" font-family="Montserrat" font-size="32px" fill="#58595B" letter-spacing="0" font-weight="bold" font-style="normal" data-font-family="Montserrat" data-font-weight="bold" data-font-style="normal" data-ttf-url="/builder_assets/fontsttf/font-montserrat-bold-normal.ttf" data-font-filename="montserrat-bold-normal">WSK</text>
+  </g>
+  </g>
+  <g data-item-type="image" data-item="Image" data-logo-item="" id="logo__item--logo_0" class="logo__item">
+    <g class="logo__item__inner" transform="translate(556.7639240712028 245) scale(1.5034957147145023 1.5034957147145023) rotate(0 0 0)">
+      <g>
+        <path fill="#58595B" d="M56.419,64.58v-1.93v-4.885v-5.598c-1.63,0.121-3.26,0.283-4.887,0.475v16.801   c0,1.076-0.876,1.953-1.954,1.953H24.324c-1.077,0-1.954-0.877-1.954-1.953v-9.775c-1.642,0.604-3.271,1.246-4.887,1.92v7.855   c0,3.771,3.067,6.842,6.841,6.842h25.254c3.763,0,6.826-3.055,6.84-6.818h0.001V64.58z" data-part-id="logo__item--logo_0__0"></path>
+        <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="71.9736" y1="14.8711" x2="33.3023" y2="48.1723">
+        <stop offset="0" style="stop-color:#F05A28"></stop>
+        <stop offset="0.1138" style="stop-color:#F15F27"></stop>
+        <stop offset="0.2479" style="stop-color:#F36D25"></stop>
+        <stop offset="0.3924" style="stop-color:#F68521"></stop>
+        <stop offset="0.5432" style="stop-color:#FAA61C"></stop>
+        <stop offset="0.5758" style="stop-color:#FBAE1B"></stop>
+        <stop offset="0.903" style="stop-color:#FFDD15"></stop>
+        </linearGradient>
+        <path fill="url(#SVGID_1_)" d="M22.371,44.187c0-1.077,0.876-1.954,1.954-1.954h25.254c1.078,0,1.954,0.876,1.954,1.954v5.611   c1.622-0.295,3.253-0.558,4.887-0.79v-1.543v-3.278c0-3.773-3.069-6.841-6.841-6.841H38.877v-0.011H33.99v0.011h-3.364   c0-0.003,0.002-0.005,0.002-0.011h-4.891c0,0.006,0,0.007,0,0.011h-1.414c-3.773,0-6.841,3.068-6.841,6.841v16.847   c1.614-0.789,3.239-1.557,4.887-2.281V44.187z" data-part-id="logo__item--logo_0__1"></path>
+        <path fill="#58595B" d="M68.04,55.811c0,1.078-0.878,1.955-1.952,1.955h-1.413v-5.977c-0.039,0-0.08,0-0.119,0   c-1.59,0.016-3.18,0.066-4.771,0.146v5.83h-2.542v4.885h2.54c-0.013,1.066-0.883,1.93-1.951,1.93h-0.589v4.887h0.589   c3.765,0,6.826-3.051,6.84-6.816h1.416c3.771,0,6.841-3.064,6.841-6.84v-3.779c-1.625-0.111-3.254-0.176-4.889-0.207V55.811z" data-part-id="logo__item--logo_0__2"></path>
+        <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="75.2676" y1="18.6943" x2="36.5948" y2="51.9968">
+        <stop offset="0" style="stop-color:#F05A28"></stop>
+        <stop offset="0.1138" style="stop-color:#F15F27"></stop>
+        <stop offset="0.2479" style="stop-color:#F36D25"></stop>
+        <stop offset="0.3924" style="stop-color:#F68521"></stop>
+        <stop offset="0.5432" style="stop-color:#FAA61C"></stop>
+        <stop offset="0.5758" style="stop-color:#FBAE1B"></stop>
+        <stop offset="0.903" style="stop-color:#FFDD15"></stop>
+        </linearGradient>
+        <path fill="url(#SVGID_2_)" d="M66.088,23.715H40.833c-3.763,0-6.827,3.055-6.84,6.816h-1.414c-3.482,0-6.356,2.613-6.782,5.978   h5.036c0.319-0.643,0.979-1.092,1.747-1.092h1.411v1.092h4.887v-1.092h18.955c1.077,0,1.953,0.877,1.953,1.954v11.191   c1.534-0.171,3.072-0.317,4.612-0.436c0.092-0.005,0.185-0.011,0.277-0.017V37.371c0-3.773-3.07-6.839-6.843-6.839H38.881   c0.013-1.066,0.882-1.932,1.951-1.932h25.255c1.074,0,1.952,0.879,1.952,1.958v17.367c1.627-0.072,3.257-0.109,4.889-0.109V30.557   C72.929,26.785,69.859,23.715,66.088,23.715z" data-part-id="logo__item--logo_0__3"></path>
+        <path fill="#58595B" d="M91.278,48.852l-8.545-6.191l-0.296,2.582c-2.786-0.213-5.456-0.243-8.177-0.187   c-3.194,0.076-6.376,0.301-9.54,0.643c-6.319,0.694-12.567,1.874-18.679,3.5c-12.226,3.252-23.896,8.307-34.577,14.85   C22.549,58.213,34.417,53.98,46.594,51.58c6.087-1.201,12.247-1.957,18.409-2.227c3.08-0.135,6.162-0.147,9.228-0.024   c2.567,0.11,5.192,0.318,7.661,0.67l-0.337,2.954L91.278,48.852z" data-part-id="logo__item--logo_0__4"></path>
+      </g>
+    </g>
+  </g>
+</svg>
