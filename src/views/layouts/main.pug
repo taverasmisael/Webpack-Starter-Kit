@@ -1,0 +1,10 @@
+include ../utils/data.pug
+doctype html
+html(lang="en")
+  include ../partials/head.pug
+  body
+    include ../partials/header.pug
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+    <![endif]-->
+    block content

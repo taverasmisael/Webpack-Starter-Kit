@@ -1,0 +1,7 @@
+extends ../layouts/main.pug
+append config
+  - var currentPage = 'index'
+  - var pageTitle = require('@projectConfig').APP_NAME
+block content
+  h1 Without a word
+  p=currentPage
