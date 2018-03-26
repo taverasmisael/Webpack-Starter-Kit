@@ -50,7 +50,7 @@ module.exports = {
     }),
     new FaviconsWebpackPlugin(resolve(SOURCE_FOLDER, 'favicon.png')),
     new StyleLintPlugin(),
-    ...LoadPages(resolve(SOURCE_FOLDER, 'views/pages'))
+    ...LoadPages(resolve(SOURCE_FOLDER, 'views/templates'))
   ],
   module: {
     rules: [
