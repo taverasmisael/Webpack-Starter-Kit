@@ -7,6 +7,7 @@
 		"selector-class-pattern": "^(?:(?:o|c|u|t|s|is|has|_|js|qa)-)?[a-z]+(?:-[a-z]+)*(?:__[a-z]+(?:-[a-z]+)*)?(?:--[a-z]+(?:-[a-z]+)*)?(?:\\[.+\\])?$",
 		"plugin/selector-bem-pattern": {
 			"preset": "bem"
-		}
+		},
+		"max-nesting-depth": 2
 	}
 }

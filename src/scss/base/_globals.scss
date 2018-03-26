@@ -1,0 +1,19 @@
+:root {
+  @each $colorName, $color in $brand-colors {
+    --#{$colorName}: $color;
+  }
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: 0;
+}
+
+html {
+  font-size: 18px;
+}

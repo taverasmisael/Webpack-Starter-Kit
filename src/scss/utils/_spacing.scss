@@ -1,0 +1,3 @@
+@function get-spacing($space: 1) {
+  @return get-from-map($space, 'SPACERS', $spacers);
+}

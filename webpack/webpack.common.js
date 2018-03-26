@@ -34,7 +34,7 @@ module.exports = {
     alias: { '@images': resolve(SOURCE_FOLDER, 'images/'), '@projectConfig': resolve(__dirname, './config.js') }
   },
   entry: {
-    app: [resolve(SOURCE_FOLDER, './styles/main.scss'), resolve(SOURCE_FOLDER, './js/index.js')]
+    app: [resolve(SOURCE_FOLDER, './scss/main.scss'), resolve(SOURCE_FOLDER, './js/index.js')]
   },
   output: {
     path: DIST_FOLDER,

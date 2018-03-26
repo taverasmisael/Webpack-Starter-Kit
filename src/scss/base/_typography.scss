@@ -1,0 +1,14 @@
+body {
+  color: get-color(brand-black);
+  font-family: $font-stack;
+  line-height: 1.25;
+}
+
+a {
+  color: get-color(brand-secondary);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
