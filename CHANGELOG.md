@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.0.0"></a>
+# [4.0.0](https://github.com/taverasmisael/Webpack-Starter-Kit/compare/v3.0.0...v4.0.0) (2018-03-26)
+
+
+### Bug Fixes
+
+* **js:** create missing file for contactst page ([28640a4](https://github.com/taverasmisael/Webpack-Starter-Kit/commit/28640a4))
+* **js:** remove console.log s to prevent linting warnings ([bfed875](https://github.com/taverasmisael/Webpack-Starter-Kit/commit/bfed875))
+* **templates:** use the correct attr for viewport meta ([4c83463](https://github.com/taverasmisael/Webpack-Starter-Kit/commit/4c83463))
+
+
+### Features
+
+* **dev server:** make it available on local network ([cf41855](https://github.com/taverasmisael/Webpack-Starter-Kit/commit/cf41855))
+* **scripts:** now scripts are imported only depending the page we're on ([1931c8e](https://github.com/taverasmisael/Webpack-Starter-Kit/commit/1931c8e))
+* **styles:** create good fundamentals. Move to scss folder ([52537e7](https://github.com/taverasmisael/Webpack-Starter-Kit/commit/52537e7))
+* **styles:** simplify base styles ([677d2cc](https://github.com/taverasmisael/Webpack-Starter-Kit/commit/677d2cc))
+* **template:** add pug support and aliases for imgs and config ([1c76de1](https://github.com/taverasmisael/Webpack-Starter-Kit/commit/1c76de1))
+* **templates:** split and share code. ([997d8cc](https://github.com/taverasmisael/Webpack-Starter-Kit/commit/997d8cc))
+
+
+### BREAKING CHANGES
+
+* **templates:** migrate to pug
+
+
+
 <a name="3.0.0"></a>
 # [3.0.0](https://github.com/taverasmisael/Webpack-Starter-Kit/compare/v2.0.0...v3.0.0) (2018-03-15)
 
