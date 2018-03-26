@@ -1,6 +1,6 @@
 import LoadPageScript from './loadPageScript'
 
-const currentPage = document.location.pathname.split('.')[0]
 document.addEventListener('DOMContentLoaded', () => {
+  const currentPage = document.location.pathname.split('.')[0]
   LoadPageScript(currentPage).then(({ default: InitView }) => InitView())
 })
