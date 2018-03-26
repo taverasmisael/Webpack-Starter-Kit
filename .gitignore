@@ -86,6 +86,7 @@ coverage
 
 # Build / Dist Version
 dist
+build
 
 # nyc test coverage
 .nyc_output
