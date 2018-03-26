@@ -8,11 +8,12 @@ import { PORT, SOURCE_FOLDER } from './config'
 module.exports = merge(common, {
   devtool: 'source-map',
   devServer: {
-    contentBase: SOURCE_FOLDER,
     compress: true,
+    contentBase: SOURCE_FOLDER,
+    host: '0.0.0.0',
     hot: false,
+    open: true,
     port: PORT,
-    open: true
   },
   stats: {
     colors: true,
