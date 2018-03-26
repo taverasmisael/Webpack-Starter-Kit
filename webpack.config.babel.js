@@ -1,5 +1,5 @@
-import DevConfig from './config/webpack.dev'
-import ProdConfig from './config/webpack.prod'
+import DevConfig from './webpack/webpack.dev'
+import ProdConfig from './webpack/webpack.prod'
 
 const ENVS = {
   production: ProdConfig,
